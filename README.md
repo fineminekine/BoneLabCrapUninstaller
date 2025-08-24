@@ -2,7 +2,9 @@
 
 :thinking: [How it works](#how-it-works)  
 :floppy_disk: [Installation / How to use](#installation--how-to-use)  
-:man_shrugging: [Why it was created](#why-it-was-created)
+:warning: [Troubleshooting](#troubleshooting)  
+:man_shrugging: [Why it was created](#why-it-was-created)  
+:spiral_notepad: [Additional Notes](#additional-notes)
 
 Named after the amazing [Bulk Crap Uninstaller](https://github.com/Klocman/Bulk-Crap-Uninstaller), BLCU is a simple Python script which deletes any BONELAB mods that you have not subscribed to.
 
@@ -120,6 +122,10 @@ If you encounter any errors related to the mod path, please check the following:
 3. **Mod Structure**: Verify that the mod files have the correct structure and are not corrupted.
 
 If you have moved your mods to a different directory, please update the configuration file accordingly. **Do not delete your `user.json` file, as it contains your OAuth2 token.**
+
+### Mod(s) that I wanted got deleted
+
+My brother in christ, just reinstall the mods. I gave like 50 warnings about it lmao
 
 ## Why it was created
 
