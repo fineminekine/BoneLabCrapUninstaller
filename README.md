@@ -8,7 +8,7 @@
 
 Named after the amazing [Bulk Crap Uninstaller](https://github.com/Klocman/Bulk-Crap-Uninstaller), BLCU is a simple Python script which deletes any BONELAB mods that you have not subscribed to.
 
-If you're a Fusion player, and you have "Keep Downloaded Mods" enabled, you probably know the pain of having 50-100GB of mods, and have been daunted by the task of individually deleting each folder one by one... luckily, this script fixes that!
+If you're a Fusion player, and you have "Keep Downloaded Mods" enabled, you probably know the pain of having 50-100GB of mods, and have been daunted by the task of individually deleting each folder one by one... luckily, BLCU fixes that!
 
 > [!Important]
 > THIS IS NOT A MOD MANAGER FOR BONELAB!! This is made for removing unnecessary mods you don't need! Sorry, but dem's da rules!
@@ -20,7 +20,7 @@ If you're a Fusion player, and you have "Keep Downloaded Mods" enabled, you prob
 By configuring BLCU to use your OAuth2 token, it will log into your account and grab your current subscriptions and place them in a file called `subscriptions.json`. This file holds the mod ID and mod name for every single subscription you have.
 
 > [!Tip]
-> If you don't trust the script to have access to your account (even if it's only looking at your subscriptions), then create a read only OAuth2 token. This ensures that the script will not have the ability to edit anything on your account (e.g. adding and removing subscriptions).
+> If you don't trust BLCU to have access to your account (even if it's only looking at your subscriptions), then create a read only OAuth2 token. This ensures that the BLCU will not have the ability to edit anything on your account (e.g. adding and removing subscriptions).
 
 ### Grabbing installed mods
 
@@ -31,10 +31,10 @@ This part of BLCU will look in your mods path (which is defined in a file pop-up
 
 ### Deleting unsubscribed mods
 
-This is the main functionality of the script, which is both simple and terrifying at the same time, haha. This part of the script will look through your installed mods and subscribed mods by their IDs, and find out which mods are not matching. After that, it will confirm with the user to make sure if they want to delete the listed mods printing out all of the mods that are going to be deleted in a text file called `modsToDelete.txt`.
+This is the main functionality of BLCU, which is both simple and terrifying at the same time, haha. This part of BLCU will look through your installed mods and subscribed mods by their IDs, and find out which mods are not matching. After that, it will confirm with the user to make sure if they want to delete the listed mods, printing out all of the mods that are going to be deleted in a text file called `modsToDelete.txt`.
 
 > [!Warning]
-> I am not responsible for mods that have been deleted that was already selected to be deleted by the script. If you aren't sure about deleting certain mods, then refer to the generated `modsToDelete.txt` file and find which mods you want to delete via their barcode.
+> I am not responsible for mods that have been deleted that was already selected to be deleted by BLCU. If you aren't sure about deleting certain mods, then refer to the generated `modsToDelete.txt` file and find which mods you want to delete via their barcode.
 
 After the user confirms that they want to delete the mods, it will then select a mod to be deleted (which is displayed on the `modsToDelete.txt` file) individually, and delete it's respective folder and .manifest file.
 
@@ -67,13 +67,13 @@ After the user confirms that they want to delete the mods, it will then select a
 
 ### Running the program
 
-1. While in the virtual environment, run the script:
+1. While in the virtual environment, run BLCU by typing:
 
    ```bash
    python main.py
    ```
 
-2. If it's your first time running the script, it will ask for a directory to scan for mods. Go to the correct directory and select it.
+2. If it's your first time running BLCU, it will ask for a directory to scan for mods. Go to the correct directory and select it.
    - On Windows, this is usually located in `C:\Users\<YourUsername>\AppData\LocalLow\Stress Level Zero\BoneLab\Mods`. If you can't see the AppData folder, make sure you have enabled "Show hidden files" in your File Explorer settings.
    - On Linux, this is located in the same storage device where the game is installed. If you have installed the game on your main drive, it should be in `~/.local/share/Steam/steamapps/compatdata/1592190/pfx/drive_c/users/steamuser/AppData/LocalLow/Stress Level Zero/BONELAB/Mods/`.
 
@@ -85,7 +85,7 @@ After the user confirms that they want to delete the mods, it will then select a
 
 4. After entering your token, you should be greeted into a menu with a list of options. If your token is valid, you should be able to see the program greeting you with your Mod.io username.
 
-5. In the terminal, type `1` and press enter to scan for subscribed mods. You should be able to see the total amount of mods found, along with the script scanning for pages. This is due to Mod.io's API limit, which caps the number of mods to 100 per page.
+5. In the terminal, type `1` and press enter to scan for subscribed mods. You should be able to see the total amount of mods found, along with BLCU scanning for pages. This is due to Mod.io's API limit, which caps the number of mods to 100 per page.
 
 6. After the scan is complete, you should return to the main menu, which now shows the total number of subscribed mods in green text instead of "No subscribed mods found." in red text.
 
@@ -93,9 +93,9 @@ After the user confirms that they want to delete the mods, it will then select a
 
 8. After the scan is complete, you should return to the main menu, which now shows the total number of installed mods in green text instead of "No installed mods found." in red text.
 
-9. Finally, type `3` and press enter to delete unsubscribed mods. The script will calculate the total size of mods to be deleted and prompt you for confirmation before proceeding. **Ensure that you read the prompts carefully before confirming deletion.** There will be a file that is generated called `modsToDelete.txt`, which is a list of all mods that will be deleted. It is highly recommended that you review this file before proceeding with deletion, as I am not responsible for any mods that were listed and consequently deleted.
+9. Finally, type `3` and press enter to delete unsubscribed mods. BLCU will calculate the total size of mods to be deleted and prompt you for confirmation before proceeding. **Ensure that you read the prompts carefully before confirming deletion.** There will be a file that is generated called `modsToDelete.txt`, which is a list of all mods that will be deleted. It is highly recommended that you review this file before proceeding with deletion, as I am not responsible for any mods that were listed and consequently deleted.
 
-10. After typing Y and pressing enter, the script will begin deleting the unsubscribed mods. You should see progress updates in the terminal as each mod is deleted. Once the process is complete, you will see a summary of the deleted mods and the program will exit.
+10. After typing Y and pressing enter, BLCU will begin deleting the unsubscribed mods. You should see progress updates in the terminal as each mod is deleted. Once the process is complete, you will see a summary of the deleted mods and the program will exit.
 
 ## Troubleshooting
 
