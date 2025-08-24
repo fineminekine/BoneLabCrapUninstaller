@@ -39,18 +39,12 @@ def printMenu():
             colourGreen + f"Found {len(subscriptions)} subscribed mods." + colourReset
         )
     else:
-        print(
-            colourRed
-            + "No subscribed mods found, please generate a list!"
-            + colourReset
-        )
+        print(colourRed + "No subscribed mods found." + colourReset)
     installedMods = grabJSON("installedMods.json")
     if installedMods:
         print(colourGreen + f"Found {len(installedMods)} installed mods." + colourReset)
     else:
-        print(
-            colourRed + "No installed mods found, please generate a list!" + colourReset
-        )
+        print(colourRed + "No installed mods found." + colourReset)
     print("Bonelab Storage Saver")
     print("1. Get Subscribed Mods")
     print("2. Get Installed Mods")
@@ -174,7 +168,6 @@ def deleteUnsubscribedMods():
     with open("installedMods.json", "r") as f:
         installedMods = json.load(f)
 
-    # Find mods that are installed but not subscribed
     unsubscribedMods = [
         mod for mod in installedMods if str(mod["modId"]) not in subscribedMods
     ]
@@ -185,7 +178,7 @@ def deleteUnsubscribedMods():
         return
 
     print(f"Found {len(unsubscribedMods)} unsubscribed mods to delete.")
-    # Calculate total size of mods to be deleted
+
     totalSize = 0
     for mod in unsubscribedMods:
         barcode = mod["barcode"]
@@ -202,7 +195,7 @@ def deleteUnsubscribedMods():
             totalSize += os.path.getsize(manifestFile)
 
     print(f"Total size of mods to delete: {totalSize / (1024 * 1024 * 1024):.1f}GB")
-    # Save list of mods to be deleted
+
     with open("modsToDelete.txt", "w") as f:
         for mod in unsubscribedMods:
             f.write(f"Mod ID: {mod['modId']}, Barcode: {mod['barcode']}\n")
@@ -218,17 +211,15 @@ def deleteUnsubscribedMods():
         deleted_count = 0
         for mod in unsubscribedMods:
             barcode = mod["barcode"]
-            # Delete the mod folder (named after barcode)
+
             mod_folder = os.path.join(user["modsPath"], barcode)
             manifest_file = os.path.join(user["modsPath"], f"{barcode}.manifest")
 
             try:
-                # Delete the mod folder if it exists
                 if os.path.exists(mod_folder):
                     shutil.rmtree(mod_folder)
                     print(f"Deleted folder: {barcode}")
 
-                # Delete the manifest file if it exists
                 if os.path.exists(manifest_file):
                     os.remove(manifest_file)
                     print(f"Deleted manifest: {barcode}.manifest")
@@ -238,14 +229,17 @@ def deleteUnsubscribedMods():
             except Exception as e:
                 print(f"Error deleting mod {barcode}: {e}")
 
-        # Update installedMods.json with remaining mods
         remaining_mods = [
             mod for mod in installedMods if str(mod["modId"]) in subscribedMods
         ]
         with open("installedMods.json", "w") as f:
             json.dump(remaining_mods, f, indent=4)
 
-        print(f"\nSuccessfully deleted {deleted_count} unsubscribed mods.")
+        print(
+            f"\nSuccessfully deleted {deleted_count} unsubscribed mods.\nThank you for using BLCU!"
+        )
+
+        exit()
     else:
         print("Operation cancelled.")
 
