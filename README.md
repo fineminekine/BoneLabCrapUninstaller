@@ -78,8 +78,8 @@ After the user confirms that they want to delete the mods, it will then select a
 3. After the directory is selected, it will then ask for your OAuth2 token.
    - If you don't have an OAuth2 token, you can create one by going to [the Mod.io API Access page](https://mod.io/me/access) and creating a new token. Make sure you read and accept the API Terms before doing anything, as misuse of the API can result in your token being revoked, and your account potentially being banned. Once done, name your token anything you'd like, select "Read" from the dropdown box, and click the plus icon. A popup should appear with your token. Copy the token and paste it into the prompt.
 
-    > [!Caution]
-    > Make sure you do not share your token with anyone else -- it is quite literally a password that can be used to access your account. BLCU will never distribute your token to anyone else (not even me), and will be stored inside the `user.json` file **only**. This token is also never shown to you again after you create it, so make sure you copy it into the terminal when asked.
+> [!Caution]
+> Make sure you do not share your token with anyone else -- it is quite literally a password that can be used to access your account. BLCU will never distribute your token to anyone else (not even me), and will be stored inside the `user.json` file **only**. This token is also never shown to you again after you create it, so make sure you copy it into the terminal when asked.
 
 4. After entering your token, you should be greeted into a menu with a list of options. If your token is valid, you should be able to see the program greeting you with your Mod.io username.
 
