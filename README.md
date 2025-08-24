@@ -2,7 +2,7 @@
 
 :thinking: [How it works](#how-it-works)  
 :floppy_disk: [Installation / How to use](#installation--how-to-use)  
-:warning: [Troubleshooting](#troubleshooting)  
+:wrench: [Troubleshooting](#troubleshooting)  
 :man_shrugging: [Why it was created](#why-it-was-created)  
 :spiral_notepad: [Additional Notes](#additional-notes)
 
